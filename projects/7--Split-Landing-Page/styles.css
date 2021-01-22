@@ -8,7 +8,9 @@
     --right-btn-hover-color: rgba(28, 122, 28, 1);
     --hover-width: 75%;
     --other-width: 25%;
-    --speed: 1000ms
+    --speed: 1000ms;
+    --full-open: 100%;
+    --closed: 0;
 
 }
 
@@ -91,6 +93,10 @@ h1 {
     background-color: var(--left-bg-color);
 }
 
+.split.left.loader::before {
+    background-color: #fff;
+}
+
 .split.right {
     right: 0;
     background: url('https://images.unsplash.com/photo-1586920257555-a247c9f7502b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80');
@@ -104,6 +110,10 @@ h1 {
     width: 100%;
     height: 100%;
     background-color: var(--right-bg-color);
+}
+
+.split.right.loader::before {
+    background-color: #000;
 }
 
 .split.right, .split.left, .split.right::before, .split.left::before {
@@ -126,6 +136,20 @@ h1 {
     width: var(--other-width);
 }
 
+
+/* fully open  */
+.left.fully-open,
+.right.fully-open {
+    width: var(--full-open);
+}
+
+.left.closed,
+.right.closed {
+    width: var(--closed);
+}
+
+
+
 @media(max-width: 800px) {
     h1 {
         font-size: 2rem;
@@ -137,3 +161,4 @@ h1 {
         width: 12rem;
     }
 }
+
